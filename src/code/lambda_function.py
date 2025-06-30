@@ -20,6 +20,7 @@ def lambda_handler(event, context):
 
     method = event.get("requestContext", {}).get("http", {}).get("method", "")
     path = event.get("rawPath", "")
+    print(event)
 
     try:
         if method == "POST" and "/users" in path:
