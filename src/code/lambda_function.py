@@ -19,7 +19,7 @@ def lambda_handler(event, context):
     """Função principal - roteia requisições HTTP"""
 
     method = event.get("requestContext", {}).get("http", {}).get("method", "")
-    path = event.get("rawPath", "")
+    path = event.get("path", "")
     print(event)
 
     try:
