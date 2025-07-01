@@ -68,6 +68,7 @@ def create_user(event):
     return response(201, {"message": "Usuário criado", "userId": user_id})
 
 
+
 def get_user(user_id):
     """Busca usuário por ID"""
     if not user_id:
