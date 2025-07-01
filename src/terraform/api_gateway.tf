@@ -50,3 +50,9 @@ resource "aws_lambda_permission" "api_gateway" {
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${aws_apigatewayv2_api.main_api.execution_arn}/*/*"
 }
+
+resource "aws_apigatewayv2_route" "users" {
+  api_id    = aws_apigatewayv2_api.main_api.id
+  route_key = "ANY /users"
+  target    = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
+}
